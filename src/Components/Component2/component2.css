@@ -1,0 +1,89 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+fieldset, label { margin: 0; padding: 0; }
+body{ margin: 20px; }
+h1 { font-size: 1.5em; margin: 10px; }
+ 
+  
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: rgb(255, 6, 6);  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: rgb(255, 6, 6);  } 
+
+
+
+/* Components Design */
+.navbar{ display: flex; height: 80px; margin-top: 3%;}
+form{ width: 80%; margin-top: 1%}
+.SearchText{ padding: 2.5% 25%;    border-radius: 2%;   border: 2px solid grey;}
+.SearchButton{padding: 2% 4%; color: rgb(255, 6, 6); font-weight: 600;
+    border: 2px solid grey; background-color: white;
+    font-size: 20px;
+    border-radius: 9%; margin-left:2%;}
+.rating{     padding: 4% 6%;    background-color: black;
+  border-radius: 5%;
+}
+.Raiting  p { font-family: 'Kaushan Script';
+  font: italic 600 18px Oxygen; color: black; text-decoration: underline; }
+.Raiting {     width: 13%;}
+.movie-video{ display: flex; flex-direction: row;flex-wrap: wrap;    padding: 5% 12%;
+   }
+   .image-name { font-family: 'Kaushan Script';
+    font: italic 400 18px/2.8em Oxygen;
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 5%;    background-color: gray;
+    color: white;}
+    .movies-details{ padding: 0% 1%; }
+   .movies-details :hover {
+        box-shadow: 0px  5px 10px 0px hsla(0,0%,67%,.7);  -webkit-transition: box-shadow .2s ease 0s;
+        transition: box-shadow .2s ease 0s;  }
+        #plus-button{    padding: 68px 123px; font-size:80px; background-color: white;  color:rgb(255, 6, 6); font-weight: 600;  border: 2px dashed grey;}
+        .form-control{ margin-bottom: 2%;}
+        .dv-star-rating{ margin-left: 2%;}
+    .btn.btn-default  {  background-color: grey;
+        font-size: 20px;
+        border: 1px solid black;
+        color: white;
+        padding: 2% 4%;}
+      .buttons.moins-edit{ 
+display: none;     position: absolute;
+font-size:20px;; border:none;
+      }
+.button.moins, button.edit{ color: red; margin-right: 7%;  background-color: grey}
+      .movies-details:hover .buttons.moins-edit  {
+        display: flex;
+    
+    }
